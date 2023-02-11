@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    color: black;
+}
+
+
+/* header container */
+header {
+    text-align: center;
+    font-size: 1.5rem;
+    border-bottom: 3px solid #333;
+    background: linear-gradient(#b8e2ed,#4eb6d1);
+    padding: 15px;
+}
+header h1 {
+    margin-bottom: 0;
+}
+header p {
+    margin-top: 5px;
+}
+
+
+/* loading-icon-container */
+.loading-wrapper {
+    text-align: center;
+    min-height: 50px;
+    margin: 10px auto;
+    width: fit-content;
+}
+
+
+/* writing area */
+.main-container {
+    margin: 10px auto;
+    text-align: center;
+    max-width: 300px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    text-transform: uppercase;
+}
+.letter-container {
+    height: 50px;
+    width: 50px;
+    border: 1.5px solid grey;
+    box-shadow: 0 0 3px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+
+/* controllers */
+.hidden {
+    /* visibility: hidden; */
+}
+.correct {
+    background-color: greenyellow;
+    color: white;
+}
+.wrong {
+    background-color: grey;
+    color: white;
+}
+.close-guess {
+    background-color: orange;
+    color: white;
+}
+.invalid {
+    animation: flash 1s;
+}
+@keyframes flash {
+    5% {
+        border-color: crimson;
+    }
+    100% {
+        border-color: #ccc;
+    }
+}
+.spiral {
+    font-size: 2.5rem;
+    animation: spin 1.5s linear infinite;
+}
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* winner animation */
+.winner {
+    animation: rainbow 4s linear infinite;
+}
+@keyframes rainbow {
+    100%,
+    0% {
+        color: rgb(255, 0, 0);
+    }
+    8% {
+        color: rgb(255, 127, 0);
+    }
+    16% {
+        color: rgb(255, 255, 0);
+    }
+    25% {
+        color: rgb(127, 255, 0);
+    }
+    33% {
+        color: rgb(0, 255, 0);
+    }
+    41% {
+        color: rgb(0, 255, 127);
+    }
+    50% {
+        color: rgb(0, 255, 255);
+    }
+    58% {
+        color: rgb(0, 127, 255);
+    }
+    66% {
+        color: rgb(0, 0, 255);
+    }
+    75% {
+        color: rgb(127, 0, 255);
+    }
+    83% {
+        color: rgb(255, 0, 255);
+    }
+    91% {
+        color: rgb(255, 0, 127);
+    }
+}
