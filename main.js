@@ -6,6 +6,13 @@ async function init() {
   let currentGuess = "";
   let currentRow = 0;
 
+  const res = await fetch("https://words.dev-apis.com/word-of-the-day");
+  const json = await res.json();
+  const word = json.word.toUpperCase();
+
+  console.log(word);
+  setLoading(false);
+
   document.addEventListener("keydown", function handleKeyPress(e) {
     const action = e.key;
 
@@ -57,6 +64,10 @@ async function init() {
 
 function isLetter(letter) {
   return /^[a-zA-Z]$/.test(letter);
+}
+
+function setLoading(isLoading) {
+  loadingIcon.classList.toggle("hidden", !isLoading);
 }
 
 init();
